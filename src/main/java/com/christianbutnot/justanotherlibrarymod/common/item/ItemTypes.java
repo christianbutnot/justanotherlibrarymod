@@ -47,7 +47,7 @@ public class ItemTypes {
 			super.appendHoverText(stack, level, components, flag);
 		}
 	}
-	
+
 	public static class AquaticTemplateItem extends Item {
 
 		public AquaticTemplateItem(Properties p_i48487_1_) {
@@ -67,7 +67,7 @@ public class ItemTypes {
 			super.appendHoverText(stack, level, components, flag);
 		}
 	}
-	
+
 	public static class WitheredTemplateItem extends Item {
 
 		public WitheredTemplateItem(Properties p_i48487_1_) {
@@ -79,7 +79,7 @@ public class ItemTypes {
 				TooltipFlag flag) {
 			{
 				components.add(Component.literal("Utility Item").withStyle(ChatFormatting.RED)
-						.withStyle(ChatFormatting.ITALIC));	
+						.withStyle(ChatFormatting.ITALIC));
 				components.add(Component.literal("Applicable to Netherite Armor/Tools").withStyle(ChatFormatting.GRAY)
 						.withStyle(ChatFormatting.ITALIC));
 			}
@@ -87,7 +87,7 @@ public class ItemTypes {
 			super.appendHoverText(stack, level, components, flag);
 		}
 	}
-	
+
 	public static class DragonbornTemplateItem extends Item {
 
 		public DragonbornTemplateItem(Properties p_i48487_1_) {
@@ -107,7 +107,7 @@ public class ItemTypes {
 			super.appendHoverText(stack, level, components, flag);
 		}
 	}
-	
+
 	public static class BrokoniumTemplateItem extends Item {
 
 		public BrokoniumTemplateItem(Properties p_i48487_1_) {
@@ -290,5 +290,23 @@ public class ItemTypes {
 
 	        super.appendHoverText(stack, level, components, flag);
 	    }
+		
+		public static class CurrencyItem extends Item {
+
+			public CurrencyItem(Properties p_i48487_1_) {
+				super(p_i48487_1_);
+			}
+
+			@Override
+			public void appendHoverText(ItemStack stack, @Nullable TooltipContext level, List<Component> components,
+					TooltipFlag flag) {
+				{
+					components.add(Component.literal("Currency Item").withStyle(ChatFormatting.DARK_AQUA)
+							.withStyle(ChatFormatting.ITALIC));
+				}
+
+				super.appendHoverText(stack, level, components, flag);
+			}
 	}
+}
 }

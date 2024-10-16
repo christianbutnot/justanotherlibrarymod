@@ -48,6 +48,10 @@ public class CustomTags {
 		public static final TagKey<Item> DRAGONBORN = modItemTag("dragonborn");
 		public static final TagKey<Item> BROKONIUM = modItemTag("brokonium");
 		
+		public static final TagKey<Item> SCORCHED = modItemTag("scorched");
+		public static final TagKey<Item> CRYSTAL = modItemTag("crystal");
+		public static final TagKey<Item> INFERNO = modItemTag("inferno");
+		
 		public static final TagKey<Block> PAXEL_MINEABLE = modBlockTag("mineable/paxel");
 
 		public static TagKey<Block> blockTag(ResourceLocation tagLocaction) {
