@@ -24,16 +24,18 @@ import net.minecraft.world.level.gameevent.GameEvent;
 
 public class CustomPaxelItem {
 
-	@SuppressWarnings({ "unchecked", "rawtypes" })
-	protected static final Map<Block, BlockState> FLATTENABLES = Maps
-			.newHashMap(new Builder().put(Blocks.GRASS_BLOCK, Blocks.DIRT_PATH.defaultBlockState())
-					.put(Blocks.DIRT, Blocks.DIRT_PATH.defaultBlockState())
-					.put(Blocks.PODZOL, Blocks.DIRT_PATH.defaultBlockState())
-					.put(Blocks.COARSE_DIRT, Blocks.DIRT_PATH.defaultBlockState())
-					.put(Blocks.MYCELIUM, Blocks.DIRT_PATH.defaultBlockState())
-					.put(Blocks.ROOTED_DIRT, Blocks.DIRT_PATH.defaultBlockState()).build());
-
 	public static class PaxelItem extends DiggerItem {
+		
+		@SuppressWarnings({ "unchecked", "rawtypes" })
+		protected static final Map<Block, BlockState> FLATTENABLES = Maps
+				.newHashMap(new Builder().put(Blocks.GRASS_BLOCK, Blocks.DIRT_PATH.defaultBlockState())
+						.put(Blocks.DIRT, Blocks.DIRT_PATH.defaultBlockState())
+						.put(Blocks.PODZOL, Blocks.DIRT_PATH.defaultBlockState())
+						.put(Blocks.COARSE_DIRT, Blocks.DIRT_PATH.defaultBlockState())
+						.put(Blocks.MYCELIUM, Blocks.DIRT_PATH.defaultBlockState())
+						.put(Blocks.ROOTED_DIRT, Blocks.DIRT_PATH.defaultBlockState()).build());
+		
+		
 		public PaxelItem(Tier pTier, float pAttackDamageModifier, float pAttackSpeedModifier, Properties pProperties) {
 			super(pTier, CustomTags.PAXEL_MINEABLE, pProperties.attributes(createAttributes(pTier, 2F, -3F)));
 		}
