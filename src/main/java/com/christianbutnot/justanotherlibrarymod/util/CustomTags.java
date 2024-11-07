@@ -33,6 +33,12 @@ public class CustomTags {
 		public static final TagKey<Item> SAPPHIRE = modItemTag("sapphire");
 		public static final TagKey<Item> OPAL = modItemTag("opal");
 		
+		public static final TagKey<Item> CHRONIUM = modItemTag("chronium");
+		public static final TagKey<Item> ROSIUM = modItemTag("rosium");
+		public static final TagKey<Item> LUCIUM = modItemTag("lucium");
+		public static final TagKey<Item> MOCYLITE = modItemTag("mocylite");
+		public static final TagKey<Item> ENDERITE = modItemTag("enderite");
+		
 		public static final TagKey<Item> ALUMINUM = modItemTag("aluminum");
 		public static final TagKey<Item> NICKEL = modItemTag("nickel");
 		public static final TagKey<Item> SILVER = modItemTag("silver");

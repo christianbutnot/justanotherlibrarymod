@@ -43,6 +43,12 @@ public enum CustomTiersEnum implements Tier {
 	SAPPHIRE(BlockTags.INCORRECT_FOR_IRON_TOOL, 425, 6.0F, 2.0F, 35, () -> Ingredient.of(CustomTags.SAPPHIRE)),
 	OPAL(BlockTags.INCORRECT_FOR_IRON_TOOL, 425, 6.0F, 2.0F, 35, () -> Ingredient.of(CustomTags.OPAL)),
 	
+	CHRONIUM(BlockTags.INCORRECT_FOR_DIAMOND_TOOL, 600, 6.0F, 2.0F, 8, () -> Ingredient.of(CustomTags.CHRONIUM)),
+	ROSIUM(BlockTags.INCORRECT_FOR_DIAMOND_TOOL, 1561, 7.0F, 3.0F, 29, () -> Ingredient.of(CustomTags.ROSIUM)),
+	LUCIUM(BlockTags.INCORRECT_FOR_DIAMOND_TOOL, 1561, 8.0F, 3.0F, 16, () -> Ingredient.of(CustomTags.LUCIUM)),
+	MOCYLITE(BlockTags.INCORRECT_FOR_DIAMOND_TOOL, 2031, 6.0F, 3.0F, 10, () -> Ingredient.of(CustomTags.MOCYLITE)),
+	ENDERITE(BlockTags.INCORRECT_FOR_DIAMOND_TOOL, 2571, 10.0F, 4.0F, 12, () -> Ingredient.of(CustomTags.ENDERITE)),
+	
 	AQUATIC(CustomTags.NEEDS_AQUATIC_TOOL, 1000, 6.0F, 3.0F, 45, () -> Ingredient.of(CustomTags.AQUATIC)),
     WITHERED(CustomTags.NEEDS_WITHERED_TOOL, 1750, 7.0F, 4.0F, 22, () -> Ingredient.of(CustomTags.WITHERED)),
     DRAGONBORN(CustomTags.NEEDS_DRAGONBORN_TOOL, 2000, 8.0F, 5.0F, 15, () -> Ingredient.of(CustomTags.DRAGONBORN)),
