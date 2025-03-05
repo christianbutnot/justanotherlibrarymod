@@ -14,7 +14,7 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.DiggerItem;
-import net.minecraft.world.item.Tier;
+import net.minecraft.world.item.ToolMaterial;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
@@ -25,7 +25,7 @@ import net.minecraft.world.level.gameevent.GameEvent;
 public class CustomPaxelItem {
 
 	public static class PaxelItem extends DiggerItem {
-		
+
 		@SuppressWarnings({ "unchecked", "rawtypes" })
 		protected static final Map<Block, BlockState> FLATTENABLES = Maps
 				.newHashMap(new Builder().put(Blocks.GRASS_BLOCK, Blocks.DIRT_PATH.defaultBlockState())
@@ -34,10 +34,9 @@ public class CustomPaxelItem {
 						.put(Blocks.COARSE_DIRT, Blocks.DIRT_PATH.defaultBlockState())
 						.put(Blocks.MYCELIUM, Blocks.DIRT_PATH.defaultBlockState())
 						.put(Blocks.ROOTED_DIRT, Blocks.DIRT_PATH.defaultBlockState()).build());
-		
-		
-		public PaxelItem(Tier pTier, float pAttackDamageModifier, float pAttackSpeedModifier, Properties pProperties) {
-			super(pTier, CustomTags.PAXEL_MINEABLE, pProperties.attributes(createAttributes(pTier, 2F, -3F)));
+
+		public PaxelItem(ToolMaterial pTier, float pAttackDamageModifier, float pAttackSpeedModifier, Properties pProperties) {
+			super(pTier, CustomTags.PAXEL_MINEABLE, 2F, -3F, pProperties);
 		}
 
 		@Override
@@ -73,11 +72,10 @@ public class CustomPaxelItem {
 						}
 					}
 
-					return InteractionResult.sidedSuccess(level.isClientSide);
-				} else {
-					return InteractionResult.PASS;
+					return InteractionResult.SUCCESS;
 				}
 			}
-			}
+			return InteractionResult.PASS;
 		}
+	}
 }

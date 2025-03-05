@@ -1,48 +1,67 @@
 package com.christianbutnot.justanotherlibrarymod.common.item.armor;
 
 import java.util.EnumMap;
-import java.util.List;
-import java.util.function.Supplier;
 
 import com.christianbutnot.justanotherlibrarymod.util.CustomTags;
 
+import net.minecraft.Util;
 import net.minecraft.core.Holder;
-import net.minecraft.core.Registry;
-import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.world.item.ArmorItem.Type;
-import net.minecraft.world.item.ArmorMaterial;
-import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.equipment.ArmorMaterial;
+import net.minecraft.world.item.equipment.ArmorType;
+import net.minecraft.world.item.equipment.EquipmentAsset;
+import net.minecraft.world.item.equipment.EquipmentAssets;
 
+@SuppressWarnings({ "unchecked", "rawtypes" })
 public class NetherMaterialsArmorMaterials {
+	public static final ArmorMaterial SCORCHED_ARMOR_MATERIAL;
+	public static final ArmorMaterial CRYSTAL_ARMOR_MATERIAL;
+	public static final ArmorMaterial INFERNO_ARMOR_MATERIAL;
 
-	public static final Holder<ArmorMaterial> SCORCHED, CRYSTAL, INFERNO;
+	private static ArmorMaterial register(String name, int durability, EnumMap<ArmorType, Integer> typeProtection,
+			int enchantmentValue, Holder<SoundEvent> equipSound, TagKey<Item> ingredient, float toughness,
+			float knockbackResistance) {
+		ResourceLocation location = ResourceLocation.fromNamespaceAndPath("nethermaterials", name);
+		ResourceKey<EquipmentAsset> layers = ResourceKey.create(EquipmentAssets.ROOT_ID, location);
+		EnumMap<ArmorType, Integer> typeMap = new EnumMap(ArmorType.class);
+		ArmorType[] var11 = ArmorType.values();
+		int var12 = var11.length;
 
-    static {
-    	SCORCHED = register("scorched", createMap(new int[]{2, 6, 5, 2}),
-                18, SoundEvents.ARMOR_EQUIP_IRON, 0f, 0f, () -> Ingredient.of(CustomTags.SCORCHED));
-    }
-    static {
-    	CRYSTAL = register("crystal", createMap(new int[]{3, 8, 6, 3}),
-                15, SoundEvents.ARMOR_EQUIP_IRON, 2f, 0f, () -> Ingredient.of(CustomTags.CRYSTAL));
-    }
-    static {
-    	INFERNO = register("inferno", createMap(new int[]{3, 7, 5, 3}),
-                25, SoundEvents.ARMOR_EQUIP_IRON, 2f, 0f, () -> Ingredient.of(CustomTags.INFERNO));
-    }
+		for (int var13 = 0; var13 < var12; ++var13) {
+			ArmorType type = var11[var13];
+			typeMap.put(type, (Integer) typeProtection.get(type));
+		}
 
-    private static EnumMap<Type, Integer> createMap(int[] values) {
-        EnumMap<Type, Integer> enumMap = new EnumMap<>(Type.class);
-        for (int i = 0; i < values.length; i++) enumMap.put(Type.values()[i], values[i]);
-        return enumMap;
-    }
+		return new ArmorMaterial(durability, typeMap, enchantmentValue, equipSound, toughness, knockbackResistance,
+				ingredient, layers);
+	}
 
-    private static Holder<ArmorMaterial> register(String name, EnumMap<Type, Integer> defense, int i, Holder<SoundEvent> holder, float f, float g, Supplier<Ingredient> supplier) {
-    	ResourceLocation location = ResourceLocation.fromNamespaceAndPath("nethermaterials", name);
-    	List<ArmorMaterial.Layer> layers = List.of(new ArmorMaterial.Layer(location));
-    	
-        return Registry.registerForHolder(BuiltInRegistries.ARMOR_MATERIAL, location, new ArmorMaterial(defense, i, holder, supplier, layers, f, g));
-    }
+	static {
+		SCORCHED_ARMOR_MATERIAL = register("scorched", 5, (EnumMap) Util.make(new EnumMap(ArmorType.class), (map) -> {
+			map.put(ArmorType.BOOTS, 2);
+			map.put(ArmorType.LEGGINGS, 5);
+			map.put(ArmorType.CHESTPLATE, 6);
+			map.put(ArmorType.HELMET, 2);
+			map.put(ArmorType.BODY, 5);
+		}), 18, SoundEvents.ARMOR_EQUIP_GOLD, CustomTags.SCORCHED, 1.0F, 0.0F);
+		CRYSTAL_ARMOR_MATERIAL = register("crystal", 5, (EnumMap) Util.make(new EnumMap(ArmorType.class), (map) -> {
+			map.put(ArmorType.BOOTS, 3);
+			map.put(ArmorType.LEGGINGS, 6);
+			map.put(ArmorType.CHESTPLATE, 8);
+			map.put(ArmorType.HELMET, 3);
+			map.put(ArmorType.BODY, 5);
+		}), 15, SoundEvents.ARMOR_EQUIP_GOLD, CustomTags.CRYSTAL, 1.0F, 0.0F);
+		INFERNO_ARMOR_MATERIAL = register("inferno", 5, (EnumMap) Util.make(new EnumMap(ArmorType.class), (map) -> {
+			map.put(ArmorType.BOOTS, 3);
+			map.put(ArmorType.LEGGINGS, 5);
+			map.put(ArmorType.CHESTPLATE, 7);
+			map.put(ArmorType.HELMET, 3);
+			map.put(ArmorType.BODY, 5);
+		}), 25, SoundEvents.ARMOR_EQUIP_GOLD, CustomTags.INFERNO, 1.0F, 0.0F);
+	}
 }

@@ -6,12 +6,12 @@ import javax.annotation.Nullable;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
-import net.minecraft.world.item.ItemNameBlockItem;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.block.Block;
 
-public class BasicCropItem extends ItemNameBlockItem {
+public class BasicCropItem extends BlockItem {
 
 	public BasicCropItem(Block p_41579_, Properties p_41580_) {
 		super(p_41579_, p_41580_);

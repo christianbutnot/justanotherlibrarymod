@@ -1,58 +1,76 @@
 package com.christianbutnot.justanotherlibrarymod.common.item.armor;
 
 import java.util.EnumMap;
-import java.util.List;
-import java.util.function.Supplier;
 
 import com.christianbutnot.justanotherlibrarymod.util.CustomTags;
 
+import net.minecraft.Util;
 import net.minecraft.core.Holder;
-import net.minecraft.core.Registry;
-import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.world.item.ArmorItem.Type;
-import net.minecraft.world.item.ArmorMaterial;
-import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.equipment.ArmorMaterial;
+import net.minecraft.world.item.equipment.ArmorType;
+import net.minecraft.world.item.equipment.EquipmentAsset;
+import net.minecraft.world.item.equipment.EquipmentAssets;
 
+@SuppressWarnings({ "unchecked", "rawtypes" })
 public class ProgUtilsArmorMaterials {
-	
-	public static final Holder<ArmorMaterial> AQUATIC, WITHERED, DRAGONBORN, BROKONIUM;
-	
-	static {
-		AQUATIC = register("aquatic", createMap(new int[] { 3, 8, 6, 3 }), 25, SoundEvents.ARMOR_EQUIP_NETHERITE, 0f,
-				0f, () -> Ingredient.of(CustomTags.AQUATIC));
-	}
+	public static final ArmorMaterial AQUATIC_ARMOR_MATERIAL;
+	public static final ArmorMaterial WITHERED_ARMOR_MATERIAL;
+	public static final ArmorMaterial DRAGONBORN_ARMOR_MATERIAL;
+	public static final ArmorMaterial BROKONIUM_ARMOR_MATERIAL;
 
-	static {
-		WITHERED = register("withered", createMap(new int[] { 3, 8, 6, 3 }), 9, SoundEvents.ARMOR_EQUIP_NETHERITE, 2f,
-				0.2f, () -> Ingredient.of(CustomTags.WITHERED));
-	}
-
-	static {
-		DRAGONBORN = register("dragonborn", createMap(new int[] { 3, 8, 6, 3 }), 9, SoundEvents.ARMOR_EQUIP_NETHERITE,
-				2f, 0.2f, () -> Ingredient.of(CustomTags.DRAGONBORN));
-	}
-
-	static {
-		BROKONIUM = register("brokonium", createMap(new int[] { 4, 8, 6, 4 }), 15, SoundEvents.ARMOR_EQUIP_NETHERITE,
-				2f, 1.0f, () -> Ingredient.of(CustomTags.BROKONIUM));
-	}
-
-	private static EnumMap<Type, Integer> createMap(int[] values) {
-		EnumMap<Type, Integer> enumMap = new EnumMap<>(Type.class);
-		for (int i = 0; i < values.length; i++)
-			enumMap.put(Type.values()[i], values[i]);
-		return enumMap;
-	}
-
-	private static Holder<ArmorMaterial> register(String name, EnumMap<Type, Integer> defense, int i,
-			Holder<SoundEvent> holder, float f, float g, Supplier<Ingredient> supplier) {
+	private static ArmorMaterial register(String name, int durability, EnumMap<ArmorType, Integer> typeProtection,
+			int enchantmentValue, Holder<SoundEvent> equipSound, TagKey<Item> ingredient, float toughness,
+			float knockbackResistance) {
 		ResourceLocation location = ResourceLocation.fromNamespaceAndPath("progressionutils", name);
-		List<ArmorMaterial.Layer> layers = List.of(new ArmorMaterial.Layer(location));
+		ResourceKey<EquipmentAsset> layers = ResourceKey.create(EquipmentAssets.ROOT_ID, location);
+		EnumMap<ArmorType, Integer> typeMap = new EnumMap(ArmorType.class);
+		ArmorType[] var11 = ArmorType.values();
+		int var12 = var11.length;
 
-		return Registry.registerForHolder(BuiltInRegistries.ARMOR_MATERIAL, location,
-				new ArmorMaterial(defense, i, holder, supplier, layers, f, g));
+		for (int var13 = 0; var13 < var12; ++var13) {
+			ArmorType type = var11[var13];
+			typeMap.put(type, (Integer) typeProtection.get(type));
+		}
+
+		return new ArmorMaterial(durability, typeMap, enchantmentValue, equipSound, toughness, knockbackResistance,
+				ingredient, layers);
+	}
+
+	static {
+		AQUATIC_ARMOR_MATERIAL = register("aquatic", 5, (EnumMap) Util.make(new EnumMap(ArmorType.class), (map) -> {
+			map.put(ArmorType.BOOTS, 3);
+			map.put(ArmorType.LEGGINGS, 6);
+			map.put(ArmorType.CHESTPLATE, 8);
+			map.put(ArmorType.HELMET, 3);
+			map.put(ArmorType.BODY, 5);
+		}), 25, SoundEvents.ARMOR_EQUIP_GOLD, CustomTags.AQUATIC, 0.0F, 0.0F);
+		WITHERED_ARMOR_MATERIAL = register("withered", 5, (EnumMap) Util.make(new EnumMap(ArmorType.class), (map) -> {
+			map.put(ArmorType.BOOTS, 3);
+			map.put(ArmorType.LEGGINGS, 6);
+			map.put(ArmorType.CHESTPLATE, 8);
+			map.put(ArmorType.HELMET, 3);
+			map.put(ArmorType.BODY, 5);
+		}), 9, SoundEvents.ARMOR_EQUIP_GOLD, CustomTags.WITHERED, 2.0F, 0.2F);
+		DRAGONBORN_ARMOR_MATERIAL = register("dragonborn", 5,
+				(EnumMap) Util.make(new EnumMap(ArmorType.class), (map) -> {
+					map.put(ArmorType.BOOTS, 3);
+					map.put(ArmorType.LEGGINGS, 6);
+					map.put(ArmorType.CHESTPLATE, 8);
+					map.put(ArmorType.HELMET, 3);
+					map.put(ArmorType.BODY, 5);
+				}), 9, SoundEvents.ARMOR_EQUIP_GOLD, CustomTags.DRAGONBORN, 2.0F, 0.2F);
+		BROKONIUM_ARMOR_MATERIAL = register("brokonium", 5, (EnumMap) Util.make(new EnumMap(ArmorType.class), (map) -> {
+			map.put(ArmorType.BOOTS, 4);
+			map.put(ArmorType.LEGGINGS, 6);
+			map.put(ArmorType.CHESTPLATE, 8);
+			map.put(ArmorType.HELMET, 4);
+			map.put(ArmorType.BODY, 5);
+		}), 15, SoundEvents.ARMOR_EQUIP_GOLD, CustomTags.BROKONIUM, 2.0F, 1.0F);
 	}
 }

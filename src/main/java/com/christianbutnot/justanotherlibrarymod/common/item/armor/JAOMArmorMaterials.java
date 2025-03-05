@@ -1,57 +1,79 @@
 package com.christianbutnot.justanotherlibrarymod.common.item.armor;
 
 import java.util.EnumMap;
-import java.util.List;
-import java.util.function.Supplier;
 
-import com.christianbutnot.justanotherlibrarymod.Main;
 import com.christianbutnot.justanotherlibrarymod.util.CustomTags;
 
+import net.minecraft.Util;
 import net.minecraft.core.Holder;
-import net.minecraft.core.Registry;
-import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.world.item.ArmorItem.Type;
-import net.minecraft.world.item.ArmorMaterial;
-import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.equipment.ArmorMaterial;
+import net.minecraft.world.item.equipment.ArmorType;
+import net.minecraft.world.item.equipment.EquipmentAsset;
+import net.minecraft.world.item.equipment.EquipmentAssets;
 
 public class JAOMArmorMaterials {
+	   public static final ArmorMaterial CHRONIUM_ARMOR_MATERIAL;
+	   public static final ArmorMaterial ROSIUM_ARMOR_MATERIAL;
+	   public static final ArmorMaterial LUCIUM_ARMOR_MATERIAL;
+	   public static final ArmorMaterial MOCYLITE_ARMOR_MATERIAL;
+	   public static final ArmorMaterial ENDERITE_ARMOR_MATERIAL;
 
-	public static final Holder<ArmorMaterial> CHRONIUM, ROSIUM, LUCIUM, MOCYLITE, ENDERITE;
+	   private static ArmorMaterial register(String name, int durability, EnumMap<ArmorType, Integer> typeProtection, int enchantmentValue, Holder<SoundEvent> equipSound, TagKey<Item> ingredient, float toughness, float knockbackResistance) {
+	      ResourceLocation location = ResourceLocation.fromNamespaceAndPath("justanotheroresmod", name);
+	      ResourceKey<EquipmentAsset> layers = ResourceKey.create(EquipmentAssets.ROOT_ID, location);
+	      EnumMap<ArmorType, Integer> typeMap = new EnumMap(ArmorType.class);
+	      ArmorType[] var11 = ArmorType.values();
+	      int var12 = var11.length;
 
-    static {
-        CHRONIUM = register("chronium", createMap(new int[]{3, 6, 5, 3}),
-                8, SoundEvents.ARMOR_EQUIP_DIAMOND, 0f, 0f, () -> Ingredient.of(CustomTags.CHRONIUM));
-    }
-    static {
-    	ROSIUM = register("rosium", createMap(new int[]{3, 8, 6, 3}),
-                29, SoundEvents.ARMOR_EQUIP_DIAMOND, 2f, 0.2f, () -> Ingredient.of(CustomTags.ROSIUM));
-    }
-    static {
-    	LUCIUM = register("lucium", createMap(new int[]{3, 8, 6, 3}),
-                16, SoundEvents.ARMOR_EQUIP_DIAMOND, 3f, 0f, () -> Ingredient.of(CustomTags.LUCIUM));
-    }
-    static {
-    	MOCYLITE = register("mocylite", createMap(new int[]{3, 8, 6, 3}),
-                10, SoundEvents.ARMOR_EQUIP_DIAMOND, 3f, 0.5f, () -> Ingredient.of(CustomTags.MOCYLITE));
-    }
-    static {
-    	ENDERITE = register("enderite", createMap(new int[]{4, 8, 6, 4}),
-                12, SoundEvents.ARMOR_EQUIP_DIAMOND, 3f, 0.0f, () -> Ingredient.of(CustomTags.ENDERITE));
-    }
+	      for(int var13 = 0; var13 < var12; ++var13) {
+	         ArmorType type = var11[var13];
+	         typeMap.put(type, (Integer)typeProtection.get(type));
+	      }
 
-    private static EnumMap<Type, Integer> createMap(int[] values) {
-        EnumMap<Type, Integer> enumMap = new EnumMap<>(Type.class);
-        for (int i = 0; i < values.length; i++) enumMap.put(Type.values()[i], values[i]);
-        return enumMap;
-    }
+	      return new ArmorMaterial(durability, typeMap, enchantmentValue, equipSound, toughness, knockbackResistance, ingredient, layers);
+	   }
 
-    private static Holder<ArmorMaterial> register(String name, EnumMap<Type, Integer> defense, int i, Holder<SoundEvent> holder, float f, float g, Supplier<Ingredient> supplier) {
-    	ResourceLocation location = ResourceLocation.fromNamespaceAndPath(Main.MODID, name);
-    	List<ArmorMaterial.Layer> layers = List.of(new ArmorMaterial.Layer(location));
-    	
-        return Registry.registerForHolder(BuiltInRegistries.ARMOR_MATERIAL, location, new ArmorMaterial(defense, i, holder, supplier, layers, f, g));
-    }
-}
+	   static {
+	      CHRONIUM_ARMOR_MATERIAL = register("chronium", 25, (EnumMap)Util.make(new EnumMap(ArmorType.class), (map) -> {
+	         map.put(ArmorType.BOOTS, 3);
+	         map.put(ArmorType.LEGGINGS, 5);
+	         map.put(ArmorType.CHESTPLATE, 6);
+	         map.put(ArmorType.HELMET, 3);
+	         map.put(ArmorType.BODY, 5);
+	      }), 8, SoundEvents.ARMOR_EQUIP_DIAMOND, CustomTags.CHRONIUM, 0.0F, 0.0F);
+	      ROSIUM_ARMOR_MATERIAL = register("rosium", 25, (EnumMap)Util.make(new EnumMap(ArmorType.class), (map) -> {
+	         map.put(ArmorType.BOOTS, 3);
+	         map.put(ArmorType.LEGGINGS, 6);
+	         map.put(ArmorType.CHESTPLATE, 8);
+	         map.put(ArmorType.HELMET, 3);
+	         map.put(ArmorType.BODY, 5);
+	      }), 29, SoundEvents.ARMOR_EQUIP_DIAMOND, CustomTags.ROSIUM, 0.0F, 0.0F);
+	      LUCIUM_ARMOR_MATERIAL = register("lucium", 25, (EnumMap)Util.make(new EnumMap(ArmorType.class), (map) -> {
+	         map.put(ArmorType.BOOTS, 3);
+	         map.put(ArmorType.LEGGINGS, 6);
+	         map.put(ArmorType.CHESTPLATE, 8);
+	         map.put(ArmorType.HELMET, 3);
+	         map.put(ArmorType.BODY, 5);
+	      }), 16, SoundEvents.ARMOR_EQUIP_DIAMOND, CustomTags.LUCIUM, 0.0F, 0.0F);
+	      MOCYLITE_ARMOR_MATERIAL = register("mocylite", 25, (EnumMap)Util.make(new EnumMap(ArmorType.class), (map) -> {
+	         map.put(ArmorType.BOOTS, 3);
+	         map.put(ArmorType.LEGGINGS, 6);
+	         map.put(ArmorType.CHESTPLATE, 8);
+	         map.put(ArmorType.HELMET, 3);
+	         map.put(ArmorType.BODY, 5);
+	      }), 10, SoundEvents.ARMOR_EQUIP_DIAMOND, CustomTags.MOCYLITE, 3.0F, 0.5F);
+	      ENDERITE_ARMOR_MATERIAL = register("enderite", 25, (EnumMap)Util.make(new EnumMap(ArmorType.class), (map) -> {
+	         map.put(ArmorType.BOOTS, 4);
+	         map.put(ArmorType.LEGGINGS, 6);
+	         map.put(ArmorType.CHESTPLATE, 8);
+	         map.put(ArmorType.HELMET, 4);
+	         map.put(ArmorType.BODY, 5);
+	      }), 12, SoundEvents.ARMOR_EQUIP_DIAMOND, CustomTags.ENDERITE, 3.0F, 0.0F);
+	   }
+	}

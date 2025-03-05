@@ -1,100 +1,107 @@
 package com.christianbutnot.justanotherlibrarymod.common.item.armor;
 
 import java.util.EnumMap;
-import java.util.List;
-import java.util.function.Supplier;
 
 import com.christianbutnot.justanotherlibrarymod.util.CustomTags;
 
+import net.minecraft.Util;
 import net.minecraft.core.Holder;
-import net.minecraft.core.Registry;
-import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.world.item.ArmorItem.Type;
-import net.minecraft.world.item.ArmorMaterial;
-import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.equipment.ArmorMaterial;
+import net.minecraft.world.item.equipment.ArmorType;
+import net.minecraft.world.item.equipment.EquipmentAsset;
+import net.minecraft.world.item.equipment.EquipmentAssets;
 
 public class CustomArmorMaterials {
+	   public static class EssentiallyRubyMaterials {
+		      public static final ArmorMaterial RUBY_ARMOR_MATERIAL;
 
-	public static class EssentiallyOpalMaterials {
+		      private static ArmorMaterial register(String name, int durability, EnumMap<ArmorType, Integer> typeProtection, int enchantmentValue, Holder<SoundEvent> equipSound, TagKey<Item> ingredient, float toughness, float knockbackResistance) {
+		         ResourceLocation location = ResourceLocation.fromNamespaceAndPath("essentiallyruby", name);
+		         ResourceKey<EquipmentAsset> layers = ResourceKey.create(EquipmentAssets.ROOT_ID, location);
+		         EnumMap<ArmorType, Integer> typeMap = new EnumMap(ArmorType.class);
+		         ArmorType[] var11 = ArmorType.values();
+		         int var12 = var11.length;
 
-		public static final Holder<ArmorMaterial> OPAL;
+		         for(int var13 = 0; var13 < var12; ++var13) {
+		            ArmorType type = var11[var13];
+		            typeMap.put(type, (Integer)typeProtection.get(type));
+		         }
 
-		static {
-			OPAL = register("opal", createMap(new int[] { 2, 7, 5, 2 }), 25, SoundEvents.ARMOR_EQUIP_NETHERITE, 0f, 0f,
-					() -> Ingredient.of(CustomTags.OPAL));
+		         return new ArmorMaterial(durability, typeMap, enchantmentValue, equipSound, toughness, knockbackResistance, ingredient, layers);
+		      }
+
+		      static {
+		         RUBY_ARMOR_MATERIAL = register("ruby", 25, (EnumMap)Util.make(new EnumMap(ArmorType.class), (map) -> {
+		            map.put(ArmorType.BOOTS, 3);
+		            map.put(ArmorType.LEGGINGS, 5);
+		            map.put(ArmorType.CHESTPLATE, 7);
+		            map.put(ArmorType.HELMET, 3);
+		            map.put(ArmorType.BODY, 5);
+		         }), 25, SoundEvents.ARMOR_EQUIP_DIAMOND, CustomTags.RUBY, 0.0F, 0.0F);
+		      }
+		   }
+
+		   public static class EssentiallySapphireMaterials {
+		      public static final ArmorMaterial SAPPHIRE_ARMOR_MATERIAL;
+
+		      private static ArmorMaterial register(String name, int durability, EnumMap<ArmorType, Integer> typeProtection, int enchantmentValue, Holder<SoundEvent> equipSound, TagKey<Item> ingredient, float toughness, float knockbackResistance) {
+		         ResourceLocation location = ResourceLocation.fromNamespaceAndPath("essentiallysapphire", name);
+		         ResourceKey<EquipmentAsset> layers = ResourceKey.create(EquipmentAssets.ROOT_ID, location);
+		         EnumMap<ArmorType, Integer> typeMap = new EnumMap(ArmorType.class);
+		         ArmorType[] var11 = ArmorType.values();
+		         int var12 = var11.length;
+
+		         for(int var13 = 0; var13 < var12; ++var13) {
+		            ArmorType type = var11[var13];
+		            typeMap.put(type, (Integer)typeProtection.get(type));
+		         }
+
+		         return new ArmorMaterial(durability, typeMap, enchantmentValue, equipSound, toughness, knockbackResistance, ingredient, layers);
+		      }
+
+		      static {
+		         SAPPHIRE_ARMOR_MATERIAL = register("sapphire", 25, (EnumMap)Util.make(new EnumMap(ArmorType.class), (map) -> {
+		            map.put(ArmorType.BOOTS, 3);
+		            map.put(ArmorType.LEGGINGS, 5);
+		            map.put(ArmorType.CHESTPLATE, 7);
+		            map.put(ArmorType.HELMET, 3);
+		            map.put(ArmorType.BODY, 5);
+		         }), 25, SoundEvents.ARMOR_EQUIP_DIAMOND, CustomTags.SAPPHIRE, 0.0F, 0.0F);
+		      }
+		   }
+
+		   public static class EssentiallyOpalMaterials {
+		      public static final ArmorMaterial OPAL_ARMOR_MATERIAL;
+
+		      private static ArmorMaterial register(String name, int durability, EnumMap<ArmorType, Integer> typeProtection, int enchantmentValue, Holder<SoundEvent> equipSound, TagKey<Item> ingredient, float toughness, float knockbackResistance) {
+		         ResourceLocation location = ResourceLocation.fromNamespaceAndPath("essentiallyopal", name);
+		         ResourceKey<EquipmentAsset> layers = ResourceKey.create(EquipmentAssets.ROOT_ID, location);
+		         EnumMap<ArmorType, Integer> typeMap = new EnumMap(ArmorType.class);
+		         ArmorType[] var11 = ArmorType.values();
+		         int var12 = var11.length;
+
+		         for(int var13 = 0; var13 < var12; ++var13) {
+		            ArmorType type = var11[var13];
+		            typeMap.put(type, (Integer)typeProtection.get(type));
+		         }
+
+		         return new ArmorMaterial(durability, typeMap, enchantmentValue, equipSound, toughness, knockbackResistance, ingredient, layers);
+		      }
+
+		      static {
+		         OPAL_ARMOR_MATERIAL = register("opal", 25, (EnumMap)Util.make(new EnumMap(ArmorType.class), (map) -> {
+		            map.put(ArmorType.BOOTS, 3);
+		            map.put(ArmorType.LEGGINGS, 5);
+		            map.put(ArmorType.CHESTPLATE, 7);
+		            map.put(ArmorType.HELMET, 3);
+		            map.put(ArmorType.BODY, 5);
+		         }), 25, SoundEvents.ARMOR_EQUIP_DIAMOND, CustomTags.OPAL, 0.0F, 0.0F);
+		      }
+		   }
 		}
-
-		private static EnumMap<Type, Integer> createMap(int[] values) {
-			EnumMap<Type, Integer> enumMap = new EnumMap<>(Type.class);
-			for (int i = 0; i < values.length; i++)
-				enumMap.put(Type.values()[i], values[i]);
-			return enumMap;
-		}
-
-		private static Holder<ArmorMaterial> register(String name, EnumMap<Type, Integer> defense, int i,
-				Holder<SoundEvent> holder, float f, float g, Supplier<Ingredient> supplier) {
-			ResourceLocation location = ResourceLocation.fromNamespaceAndPath("essentiallyopal", name);
-			List<ArmorMaterial.Layer> layers = List.of(new ArmorMaterial.Layer(location));
-
-			return Registry.registerForHolder(BuiltInRegistries.ARMOR_MATERIAL, location,
-					new ArmorMaterial(defense, i, holder, supplier, layers, f, g));
-		}
-
-	}
-
-	public static class EssentiallySapphireMaterials {
-
-		public static final Holder<ArmorMaterial> SAPPHIRE;
-
-		static {
-			SAPPHIRE = register("sapphire", createMap(new int[] { 2, 7, 5, 2 }), 25, SoundEvents.ARMOR_EQUIP_NETHERITE, 0f, 0f,
-					() -> Ingredient.of(CustomTags.SAPPHIRE));
-		}
-
-		private static EnumMap<Type, Integer> createMap(int[] values) {
-			EnumMap<Type, Integer> enumMap = new EnumMap<>(Type.class);
-			for (int i = 0; i < values.length; i++)
-				enumMap.put(Type.values()[i], values[i]);
-			return enumMap;
-		}
-
-		private static Holder<ArmorMaterial> register(String name, EnumMap<Type, Integer> defense, int i,
-				Holder<SoundEvent> holder, float f, float g, Supplier<Ingredient> supplier) {
-			ResourceLocation location = ResourceLocation.fromNamespaceAndPath("essentiallysapphire", name);
-			List<ArmorMaterial.Layer> layers = List.of(new ArmorMaterial.Layer(location));
-
-			return Registry.registerForHolder(BuiltInRegistries.ARMOR_MATERIAL, location,
-					new ArmorMaterial(defense, i, holder, supplier, layers, f, g));
-		}
-
-	}
-
-	public static class EssentiallyRubyMaterials {
-
-		public static final Holder<ArmorMaterial> RUBY;
-
-		static {
-			RUBY = register("ruby", createMap(new int[] { 2, 7, 5, 2 }), 25, SoundEvents.ARMOR_EQUIP_NETHERITE, 0f, 0f,
-					() -> Ingredient.of(CustomTags.OPAL));
-		}
-
-		private static EnumMap<Type, Integer> createMap(int[] values) {
-			EnumMap<Type, Integer> enumMap = new EnumMap<>(Type.class);
-			for (int i = 0; i < values.length; i++)
-				enumMap.put(Type.values()[i], values[i]);
-			return enumMap;
-		}
-
-		private static Holder<ArmorMaterial> register(String name, EnumMap<Type, Integer> defense, int i,
-				Holder<SoundEvent> holder, float f, float g, Supplier<Ingredient> supplier) {
-			ResourceLocation location = ResourceLocation.fromNamespaceAndPath("essentiallyruby", name);
-			List<ArmorMaterial.Layer> layers = List.of(new ArmorMaterial.Layer(location));
-
-			return Registry.registerForHolder(BuiltInRegistries.ARMOR_MATERIAL, location,
-					new ArmorMaterial(defense, i, holder, supplier, layers, f, g));
-		}
-	}
-}
