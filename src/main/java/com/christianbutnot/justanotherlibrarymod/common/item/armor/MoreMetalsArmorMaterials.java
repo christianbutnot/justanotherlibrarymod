@@ -46,70 +46,70 @@ public class MoreMetalsArmorMaterials {
 	   }
 
 	   static {
-	      COPPER_ARMOR_MATERIAL = register("copper", 5, (EnumMap)Util.make(new EnumMap(ArmorType.class), (map) -> {
+	      COPPER_ARMOR_MATERIAL = register("copper", 15, (EnumMap)Util.make(new EnumMap(ArmorType.class), (map) -> {
 	         map.put(ArmorType.BOOTS, 1);
 	         map.put(ArmorType.LEGGINGS, 3);
 	         map.put(ArmorType.CHESTPLATE, 5);
 	         map.put(ArmorType.HELMET, 2);
 	         map.put(ArmorType.BODY, 5);
 	      }), 14, SoundEvents.ARMOR_EQUIP_GOLD, CustomTags.COPPER, 0.0F, 0.0F);
-	      TIN_ARMOR_MATERIAL = register("tin", 5, (EnumMap)Util.make(new EnumMap(ArmorType.class), (map) -> {
+	      TIN_ARMOR_MATERIAL = register("tin", 15, (EnumMap)Util.make(new EnumMap(ArmorType.class), (map) -> {
 	         map.put(ArmorType.BOOTS, 2);
 	         map.put(ArmorType.LEGGINGS, 3);
 	         map.put(ArmorType.CHESTPLATE, 5);
 	         map.put(ArmorType.HELMET, 2);
 	         map.put(ArmorType.BODY, 5);
 	      }), 14, SoundEvents.ARMOR_EQUIP_GOLD, CustomTags.TIN, 0.0F, 0.0F);
-	      BRONZE_ARMOR_MATERIAL = register("bronze", 5, (EnumMap)Util.make(new EnumMap(ArmorType.class), (map) -> {
+	      BRONZE_ARMOR_MATERIAL = register("bronze", 15, (EnumMap)Util.make(new EnumMap(ArmorType.class), (map) -> {
 	         map.put(ArmorType.BOOTS, 2);
 	         map.put(ArmorType.LEGGINGS, 3);
 	         map.put(ArmorType.CHESTPLATE, 5);
 	         map.put(ArmorType.HELMET, 2);
 	         map.put(ArmorType.BODY, 5);
 	      }), 14, SoundEvents.ARMOR_EQUIP_GOLD, CustomTags.BRONZE, 0.0F, 0.0F);
-	      ALUMINUM_ARMOR_MATERIAL = register("aluminum", 5, (EnumMap)Util.make(new EnumMap(ArmorType.class), (map) -> {
+	      ALUMINUM_ARMOR_MATERIAL = register("aluminum", 15, (EnumMap)Util.make(new EnumMap(ArmorType.class), (map) -> {
 	         map.put(ArmorType.BOOTS, 2);
 	         map.put(ArmorType.LEGGINGS, 3);
 	         map.put(ArmorType.CHESTPLATE, 5);
 	         map.put(ArmorType.HELMET, 2);
 	         map.put(ArmorType.BODY, 5);
 	      }), 14, SoundEvents.ARMOR_EQUIP_GOLD, CustomTags.ALUMINUM, 0.0F, 0.0F);
-	      NICKEL_ARMOR_MATERIAL = register("nickel", 5, (EnumMap)Util.make(new EnumMap(ArmorType.class), (map) -> {
+	      NICKEL_ARMOR_MATERIAL = register("nickel", 25, (EnumMap)Util.make(new EnumMap(ArmorType.class), (map) -> {
 	         map.put(ArmorType.BOOTS, 2);
 	         map.put(ArmorType.LEGGINGS, 5);
 	         map.put(ArmorType.CHESTPLATE, 6);
 	         map.put(ArmorType.HELMET, 2);
 	         map.put(ArmorType.BODY, 5);
 	      }), 20, SoundEvents.ARMOR_EQUIP_GOLD, CustomTags.NICKEL, 0.0F, 0.0F);
-	      SILVER_ARMOR_MATERIAL = register("silver", 5, (EnumMap)Util.make(new EnumMap(ArmorType.class), (map) -> {
+	      SILVER_ARMOR_MATERIAL = register("silver", 25, (EnumMap)Util.make(new EnumMap(ArmorType.class), (map) -> {
 	         map.put(ArmorType.BOOTS, 2);
 	         map.put(ArmorType.LEGGINGS, 5);
 	         map.put(ArmorType.CHESTPLATE, 6);
 	         map.put(ArmorType.HELMET, 2);
 	         map.put(ArmorType.BODY, 5);
 	      }), 25, SoundEvents.ARMOR_EQUIP_GOLD, CustomTags.SILVER, 0.5F, 0.0F);
-	      LEAD_ARMOR_MATERIAL = register("lead", 5, (EnumMap)Util.make(new EnumMap(ArmorType.class), (map) -> {
+	      LEAD_ARMOR_MATERIAL = register("lead", 33, (EnumMap)Util.make(new EnumMap(ArmorType.class), (map) -> {
 	         map.put(ArmorType.BOOTS, 2);
 	         map.put(ArmorType.LEGGINGS, 5);
 	         map.put(ArmorType.CHESTPLATE, 6);
 	         map.put(ArmorType.HELMET, 3);
 	         map.put(ArmorType.BODY, 5);
 	      }), 12, SoundEvents.ARMOR_EQUIP_GOLD, CustomTags.LEAD, 1.0F, 0.0F);
-	      ZINC_ARMOR_MATERIAL = register("zinc", 5, (EnumMap)Util.make(new EnumMap(ArmorType.class), (map) -> {
+	      ZINC_ARMOR_MATERIAL = register("zinc", 33, (EnumMap)Util.make(new EnumMap(ArmorType.class), (map) -> {
 	         map.put(ArmorType.BOOTS, 2);
 	         map.put(ArmorType.LEGGINGS, 5);
 	         map.put(ArmorType.CHESTPLATE, 6);
 	         map.put(ArmorType.HELMET, 2);
 	         map.put(ArmorType.BODY, 5);
 	      }), 12, SoundEvents.ARMOR_EQUIP_GOLD, CustomTags.ZINC, 0.5F, 0.0F);
-	      ELECTRUM_ARMOR_MATERIAL = register("electrum", 5, (EnumMap)Util.make(new EnumMap(ArmorType.class), (map) -> {
+	      ELECTRUM_ARMOR_MATERIAL = register("electrum", 33, (EnumMap)Util.make(new EnumMap(ArmorType.class), (map) -> {
 	         map.put(ArmorType.BOOTS, 2);
 	         map.put(ArmorType.LEGGINGS, 5);
 	         map.put(ArmorType.CHESTPLATE, 7);
 	         map.put(ArmorType.HELMET, 2);
 	         map.put(ArmorType.BODY, 5);
 	      }), 25, SoundEvents.ARMOR_EQUIP_GOLD, CustomTags.ELECTRUM, 0.0F, 0.0F);
-	      STEEL_ARMOR_MATERIAL = register("steel", 5, (EnumMap)Util.make(new EnumMap(ArmorType.class), (map) -> {
+	      STEEL_ARMOR_MATERIAL = register("steel", 37, (EnumMap)Util.make(new EnumMap(ArmorType.class), (map) -> {
 	         map.put(ArmorType.BOOTS, 3);
 	         map.put(ArmorType.LEGGINGS, 5);
 	         map.put(ArmorType.CHESTPLATE, 7);

@@ -42,21 +42,21 @@ public class NetherMaterialsArmorMaterials {
 	}
 
 	static {
-		SCORCHED_ARMOR_MATERIAL = register("scorched", 5, (EnumMap) Util.make(new EnumMap(ArmorType.class), (map) -> {
+		SCORCHED_ARMOR_MATERIAL = register("scorched", 15, (EnumMap) Util.make(new EnumMap(ArmorType.class), (map) -> {
 			map.put(ArmorType.BOOTS, 2);
 			map.put(ArmorType.LEGGINGS, 5);
 			map.put(ArmorType.CHESTPLATE, 6);
 			map.put(ArmorType.HELMET, 2);
 			map.put(ArmorType.BODY, 5);
 		}), 18, SoundEvents.ARMOR_EQUIP_GOLD, CustomTags.SCORCHED, 1.0F, 0.0F);
-		CRYSTAL_ARMOR_MATERIAL = register("crystal", 5, (EnumMap) Util.make(new EnumMap(ArmorType.class), (map) -> {
+		CRYSTAL_ARMOR_MATERIAL = register("crystal", 33, (EnumMap) Util.make(new EnumMap(ArmorType.class), (map) -> {
 			map.put(ArmorType.BOOTS, 3);
 			map.put(ArmorType.LEGGINGS, 6);
 			map.put(ArmorType.CHESTPLATE, 8);
 			map.put(ArmorType.HELMET, 3);
 			map.put(ArmorType.BODY, 5);
 		}), 15, SoundEvents.ARMOR_EQUIP_GOLD, CustomTags.CRYSTAL, 1.0F, 0.0F);
-		INFERNO_ARMOR_MATERIAL = register("inferno", 5, (EnumMap) Util.make(new EnumMap(ArmorType.class), (map) -> {
+		INFERNO_ARMOR_MATERIAL = register("inferno", 33, (EnumMap) Util.make(new EnumMap(ArmorType.class), (map) -> {
 			map.put(ArmorType.BOOTS, 3);
 			map.put(ArmorType.LEGGINGS, 5);
 			map.put(ArmorType.CHESTPLATE, 7);

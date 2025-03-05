@@ -43,21 +43,21 @@ public class ProgUtilsArmorMaterials {
 	}
 
 	static {
-		AQUATIC_ARMOR_MATERIAL = register("aquatic", 5, (EnumMap) Util.make(new EnumMap(ArmorType.class), (map) -> {
+		AQUATIC_ARMOR_MATERIAL = register("aquatic", 33, (EnumMap) Util.make(new EnumMap(ArmorType.class), (map) -> {
 			map.put(ArmorType.BOOTS, 3);
 			map.put(ArmorType.LEGGINGS, 6);
 			map.put(ArmorType.CHESTPLATE, 8);
 			map.put(ArmorType.HELMET, 3);
 			map.put(ArmorType.BODY, 5);
 		}), 25, SoundEvents.ARMOR_EQUIP_GOLD, CustomTags.AQUATIC, 0.0F, 0.0F);
-		WITHERED_ARMOR_MATERIAL = register("withered", 5, (EnumMap) Util.make(new EnumMap(ArmorType.class), (map) -> {
+		WITHERED_ARMOR_MATERIAL = register("withered", 48, (EnumMap) Util.make(new EnumMap(ArmorType.class), (map) -> {
 			map.put(ArmorType.BOOTS, 3);
 			map.put(ArmorType.LEGGINGS, 6);
 			map.put(ArmorType.CHESTPLATE, 8);
 			map.put(ArmorType.HELMET, 3);
 			map.put(ArmorType.BODY, 5);
 		}), 9, SoundEvents.ARMOR_EQUIP_GOLD, CustomTags.WITHERED, 2.0F, 0.2F);
-		DRAGONBORN_ARMOR_MATERIAL = register("dragonborn", 5,
+		DRAGONBORN_ARMOR_MATERIAL = register("dragonborn", 66,
 				(EnumMap) Util.make(new EnumMap(ArmorType.class), (map) -> {
 					map.put(ArmorType.BOOTS, 3);
 					map.put(ArmorType.LEGGINGS, 6);
@@ -65,7 +65,7 @@ public class ProgUtilsArmorMaterials {
 					map.put(ArmorType.HELMET, 3);
 					map.put(ArmorType.BODY, 5);
 				}), 9, SoundEvents.ARMOR_EQUIP_GOLD, CustomTags.DRAGONBORN, 2.0F, 0.2F);
-		BROKONIUM_ARMOR_MATERIAL = register("brokonium", 5, (EnumMap) Util.make(new EnumMap(ArmorType.class), (map) -> {
+		BROKONIUM_ARMOR_MATERIAL = register("brokonium", 110, (EnumMap) Util.make(new EnumMap(ArmorType.class), (map) -> {
 			map.put(ArmorType.BOOTS, 4);
 			map.put(ArmorType.LEGGINGS, 6);
 			map.put(ArmorType.CHESTPLATE, 8);

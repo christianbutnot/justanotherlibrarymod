@@ -46,35 +46,35 @@ public class ResourcefulArmorMaterials {
 	}
 
 	static {
-		AMETHYST_ARMOR_MATERIAL = register("amethyst", 25, (EnumMap) Util.make(new EnumMap(ArmorType.class), (map) -> {
+		AMETHYST_ARMOR_MATERIAL = register("amethyst", 15, (EnumMap) Util.make(new EnumMap(ArmorType.class), (map) -> {
 			map.put(ArmorType.BOOTS, 1);
 			map.put(ArmorType.LEGGINGS, 3);
 			map.put(ArmorType.CHESTPLATE, 5);
 			map.put(ArmorType.HELMET, 1);
 			map.put(ArmorType.BODY, 5);
 		}), 22, SoundEvents.ARMOR_EQUIP_DIAMOND, CustomTags.AMETHYST, 0.5F, 0.0F);
-		REDSTONE_ARMOR_MATERIAL = register("redstone", 25, (EnumMap) Util.make(new EnumMap(ArmorType.class), (map) -> {
+		REDSTONE_ARMOR_MATERIAL = register("redstone", 15, (EnumMap) Util.make(new EnumMap(ArmorType.class), (map) -> {
 			map.put(ArmorType.BOOTS, 2);
 			map.put(ArmorType.LEGGINGS, 3);
 			map.put(ArmorType.CHESTPLATE, 5);
 			map.put(ArmorType.HELMET, 2);
 			map.put(ArmorType.BODY, 5);
 		}), 11, SoundEvents.ARMOR_EQUIP_DIAMOND, CustomTags.REDSTONE, 0.0F, 0.0F);
-		QUARTZ_ARMOR_MATERIAL = register("quartz", 25, (EnumMap) Util.make(new EnumMap(ArmorType.class), (map) -> {
+		QUARTZ_ARMOR_MATERIAL = register("quartz", 15, (EnumMap) Util.make(new EnumMap(ArmorType.class), (map) -> {
 			map.put(ArmorType.BOOTS, 2);
 			map.put(ArmorType.LEGGINGS, 4);
 			map.put(ArmorType.CHESTPLATE, 5);
 			map.put(ArmorType.HELMET, 2);
 			map.put(ArmorType.BODY, 5);
 		}), 21, SoundEvents.ARMOR_EQUIP_DIAMOND, CustomTags.QUARTZ, 0.0F, 0.0F);
-		OBSIDIAN_ARMOR_MATERIAL = register("obsidian", 25, (EnumMap) Util.make(new EnumMap(ArmorType.class), (map) -> {
+		OBSIDIAN_ARMOR_MATERIAL = register("obsidian", 45, (EnumMap) Util.make(new EnumMap(ArmorType.class), (map) -> {
 			map.put(ArmorType.BOOTS, 3);
 			map.put(ArmorType.LEGGINGS, 6);
 			map.put(ArmorType.CHESTPLATE, 8);
 			map.put(ArmorType.HELMET, 3);
 			map.put(ArmorType.BODY, 5);
 		}), 12, SoundEvents.ARMOR_EQUIP_NETHERITE, CustomTags.REFORGED_OBSIDIAN, 1.0F, 1.0F);
-		REFORGED_OBSIDIAN_ARMOR_MATERIAL = register("reforged_obsidian", 25,
+		REFORGED_OBSIDIAN_ARMOR_MATERIAL = register("reforged_obsidian", 55,
 				(EnumMap) Util.make(new EnumMap(ArmorType.class), (map) -> {
 					map.put(ArmorType.BOOTS, 3);
 					map.put(ArmorType.LEGGINGS, 6);
@@ -82,14 +82,14 @@ public class ResourcefulArmorMaterials {
 					map.put(ArmorType.HELMET, 3);
 					map.put(ArmorType.BODY, 5);
 				}), 7, SoundEvents.ARMOR_EQUIP_DIAMOND, CustomTags.OBSIDIAN, 0.5F, 0.0F);
-		BLAZING_ARMOR_MATERIAL = register("blazing", 25, (EnumMap) Util.make(new EnumMap(ArmorType.class), (map) -> {
+		BLAZING_ARMOR_MATERIAL = register("blazing", 37, (EnumMap) Util.make(new EnumMap(ArmorType.class), (map) -> {
 			map.put(ArmorType.BOOTS, 3);
 			map.put(ArmorType.LEGGINGS, 5);
 			map.put(ArmorType.CHESTPLATE, 7);
 			map.put(ArmorType.HELMET, 3);
 			map.put(ArmorType.BODY, 5);
 		}), 25, SoundEvents.ARMOR_EQUIP_DIAMOND, CustomTags.BLAZING, 0.0F, 0.0F);
-		EMERALD_ARMOR_MATERIAL = register("emerald", 25, (EnumMap) Util.make(new EnumMap(ArmorType.class), (map) -> {
+		EMERALD_ARMOR_MATERIAL = register("emerald", 33, (EnumMap) Util.make(new EnumMap(ArmorType.class), (map) -> {
 			map.put(ArmorType.BOOTS, 3);
 			map.put(ArmorType.LEGGINGS, 5);
 			map.put(ArmorType.CHESTPLATE, 7);

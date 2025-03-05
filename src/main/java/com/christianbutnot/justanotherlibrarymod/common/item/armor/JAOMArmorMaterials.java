@@ -47,28 +47,28 @@ public class JAOMArmorMaterials {
 	         map.put(ArmorType.HELMET, 3);
 	         map.put(ArmorType.BODY, 5);
 	      }), 8, SoundEvents.ARMOR_EQUIP_DIAMOND, CustomTags.CHRONIUM, 0.0F, 0.0F);
-	      ROSIUM_ARMOR_MATERIAL = register("rosium", 25, (EnumMap)Util.make(new EnumMap(ArmorType.class), (map) -> {
+	      ROSIUM_ARMOR_MATERIAL = register("rosium", 33, (EnumMap)Util.make(new EnumMap(ArmorType.class), (map) -> {
 	         map.put(ArmorType.BOOTS, 3);
 	         map.put(ArmorType.LEGGINGS, 6);
 	         map.put(ArmorType.CHESTPLATE, 8);
 	         map.put(ArmorType.HELMET, 3);
 	         map.put(ArmorType.BODY, 5);
 	      }), 29, SoundEvents.ARMOR_EQUIP_DIAMOND, CustomTags.ROSIUM, 0.0F, 0.0F);
-	      LUCIUM_ARMOR_MATERIAL = register("lucium", 25, (EnumMap)Util.make(new EnumMap(ArmorType.class), (map) -> {
+	      LUCIUM_ARMOR_MATERIAL = register("lucium", 33, (EnumMap)Util.make(new EnumMap(ArmorType.class), (map) -> {
 	         map.put(ArmorType.BOOTS, 3);
 	         map.put(ArmorType.LEGGINGS, 6);
 	         map.put(ArmorType.CHESTPLATE, 8);
 	         map.put(ArmorType.HELMET, 3);
 	         map.put(ArmorType.BODY, 5);
 	      }), 16, SoundEvents.ARMOR_EQUIP_DIAMOND, CustomTags.LUCIUM, 0.0F, 0.0F);
-	      MOCYLITE_ARMOR_MATERIAL = register("mocylite", 25, (EnumMap)Util.make(new EnumMap(ArmorType.class), (map) -> {
+	      MOCYLITE_ARMOR_MATERIAL = register("mocylite", 39, (EnumMap)Util.make(new EnumMap(ArmorType.class), (map) -> {
 	         map.put(ArmorType.BOOTS, 3);
 	         map.put(ArmorType.LEGGINGS, 6);
 	         map.put(ArmorType.CHESTPLATE, 8);
 	         map.put(ArmorType.HELMET, 3);
 	         map.put(ArmorType.BODY, 5);
 	      }), 10, SoundEvents.ARMOR_EQUIP_DIAMOND, CustomTags.MOCYLITE, 3.0F, 0.5F);
-	      ENDERITE_ARMOR_MATERIAL = register("enderite", 25, (EnumMap)Util.make(new EnumMap(ArmorType.class), (map) -> {
+	      ENDERITE_ARMOR_MATERIAL = register("enderite", 55, (EnumMap)Util.make(new EnumMap(ArmorType.class), (map) -> {
 	         map.put(ArmorType.BOOTS, 4);
 	         map.put(ArmorType.LEGGINGS, 6);
 	         map.put(ArmorType.CHESTPLATE, 8);

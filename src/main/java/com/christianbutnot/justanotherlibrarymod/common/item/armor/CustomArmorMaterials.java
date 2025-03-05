@@ -37,7 +37,7 @@ public class CustomArmorMaterials {
 		      }
 
 		      static {
-		         RUBY_ARMOR_MATERIAL = register("ruby", 25, (EnumMap)Util.make(new EnumMap(ArmorType.class), (map) -> {
+		         RUBY_ARMOR_MATERIAL = register("ruby", 33, (EnumMap)Util.make(new EnumMap(ArmorType.class), (map) -> {
 		            map.put(ArmorType.BOOTS, 3);
 		            map.put(ArmorType.LEGGINGS, 5);
 		            map.put(ArmorType.CHESTPLATE, 7);
@@ -66,7 +66,7 @@ public class CustomArmorMaterials {
 		      }
 
 		      static {
-		         SAPPHIRE_ARMOR_MATERIAL = register("sapphire", 25, (EnumMap)Util.make(new EnumMap(ArmorType.class), (map) -> {
+		         SAPPHIRE_ARMOR_MATERIAL = register("sapphire", 33, (EnumMap)Util.make(new EnumMap(ArmorType.class), (map) -> {
 		            map.put(ArmorType.BOOTS, 3);
 		            map.put(ArmorType.LEGGINGS, 5);
 		            map.put(ArmorType.CHESTPLATE, 7);
@@ -95,7 +95,7 @@ public class CustomArmorMaterials {
 		      }
 
 		      static {
-		         OPAL_ARMOR_MATERIAL = register("opal", 25, (EnumMap)Util.make(new EnumMap(ArmorType.class), (map) -> {
+		         OPAL_ARMOR_MATERIAL = register("opal", 33, (EnumMap)Util.make(new EnumMap(ArmorType.class), (map) -> {
 		            map.put(ArmorType.BOOTS, 3);
 		            map.put(ArmorType.LEGGINGS, 5);
 		            map.put(ArmorType.CHESTPLATE, 7);
