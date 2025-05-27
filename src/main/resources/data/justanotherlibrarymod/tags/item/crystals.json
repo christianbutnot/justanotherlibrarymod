@@ -1,8 +1,5 @@
 {
   "replace": false,
   "values": [
-    "progressionutils:betium_crystal",
-    "progressionutils:rubium_crystal",
-    "progressionutils:sampsonite_crystal"
   ]
 }

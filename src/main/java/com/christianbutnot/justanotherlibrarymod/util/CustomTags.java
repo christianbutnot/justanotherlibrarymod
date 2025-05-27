@@ -65,6 +65,7 @@ public class CustomTags {
 	   public static final TagKey<Item> CRYSTAL = modItemTag("crystal");
 	   public static final TagKey<Item> INFERNO = modItemTag("inferno");
 	   public static final TagKey<Block> PAXEL_MINEABLE = modBlockTag("mineable/paxel");
+	   public static final TagKey<Block> GIGA_MINEABLE = modBlockTag("mineable/giga");
 
 	   public static TagKey<Block> blockTag(ResourceLocation tagLocaction) {
 	      return TagKey.create(Registries.BLOCK, tagLocaction);
