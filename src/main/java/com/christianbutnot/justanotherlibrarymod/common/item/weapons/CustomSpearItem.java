@@ -1,12 +1,13 @@
 package com.christianbutnot.justanotherlibrarymod.common.item.weapons;
 
-import net.minecraft.world.item.SwordItem;
-import net.minecraft.world.item.ToolMaterial;
+import net.minecraft.world.item.Item;
 
-public class CustomSpearItem extends SwordItem {
+public class CustomSpearItem extends Item {
 
-	public CustomSpearItem(ToolMaterial tier, int i, int j, Properties properties) {
-		super(tier, j, j, properties);
+	public CustomSpearItem(Properties properties) {
+		super(properties);
 	}
+	
+	
 
 }

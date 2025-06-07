@@ -2,6 +2,7 @@ package com.christianbutnot.justanotherlibrarymod.common.item.tools;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Consumer;
 
 import javax.annotation.Nullable;
 
@@ -10,19 +11,17 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.tags.BlockTags;
-import net.minecraft.world.item.DiggerItem;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.ToolMaterial;
 import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.component.TooltipDisplay;
 import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.HitResult;
 
-public class CustomHammerItem extends DiggerItem {
-	public CustomHammerItem(ToolMaterial pTier, float pAttackDamageModifier, float pAttackSpeedModifier,
-			Properties pProperties) {
-		super(pTier, BlockTags.MINEABLE_WITH_SHOVEL,  2F, -3F, pProperties);
+public class CustomHammerItem extends Item {
+	public CustomHammerItem(Properties properties) {
+		super(properties);
 	}
 
 	public static List<BlockPos> getBlocksToBeDestroyed(int range, BlockPos initalBlockPos, ServerPlayer player) {
@@ -66,13 +65,14 @@ public class CustomHammerItem extends DiggerItem {
 		return positions;
 	}
 
+	@SuppressWarnings("deprecation")
 	@Override
-	public void appendHoverText(ItemStack stack, @Nullable TooltipContext level, List<Component> components, TooltipFlag flag) {
+	public void appendHoverText(ItemStack stack, @Nullable TooltipContext level, TooltipDisplay tooltipDisplay, Consumer<Component> components, TooltipFlag flag) {
 		{
-			components.add(
+			components.accept(
 					Component.literal("Tool Item").withStyle(ChatFormatting.BLUE).withStyle(ChatFormatting.ITALIC));
 		}
 
-		super.appendHoverText(stack, level, components, flag);
+		super.appendHoverText(stack, level, tooltipDisplay, components, flag);
 	}
 }

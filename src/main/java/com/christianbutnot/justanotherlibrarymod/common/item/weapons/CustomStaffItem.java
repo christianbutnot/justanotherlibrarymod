@@ -1,13 +1,13 @@
 package com.christianbutnot.justanotherlibrarymod.common.item.weapons;
 
-import net.minecraft.world.item.SwordItem;
-import net.minecraft.world.item.ToolMaterial;
+import net.minecraft.world.item.Item;
 
-public class CustomStaffItem extends SwordItem {
+public class CustomStaffItem extends Item {
 
-	public CustomStaffItem(ToolMaterial tier, int i, int j, Properties properties) {
-		super(tier, j, j, properties);
-
+	public CustomStaffItem(Properties properties) {
+		super(properties);
 	}
+	
+	
 
 }

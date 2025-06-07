@@ -1,7 +1,8 @@
 package com.christianbutnot.justanotherlibrarymod.common.item.crafting;
 
-import java.util.List;
 import java.util.function.Consumer;
+
+import javax.annotation.Nullable;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -27,11 +28,15 @@ public class HammerItem extends Item implements IItemExtension {
 	}
 	
 	@SuppressWarnings("deprecation")
-	public void appendHoverText(ItemStack stack, Item.TooltipContext worldIn, TooltipDisplay tooltip, Consumer<Component> lines, TooltipFlag flagIn)
-	{
-	    super.appendHoverText(stack, worldIn, tooltip, lines, flagIn);
+	@Override
+	public void appendHoverText(ItemStack stack, @Nullable TooltipContext level, TooltipDisplay tooltipDisplay, Consumer<Component> components,
+			TooltipFlag flag) {
+		{
+			components.accept(Component.literal("Utility Item").withStyle(ChatFormatting.RED)
+					.withStyle(ChatFormatting.ITALIC));
+		}
 
-	    tooltip.add(Component.literal("Utility Item").withStyle(ChatFormatting.RED).withStyle(ChatFormatting.ITALIC));
-	}
+		super.appendHoverText(stack, level, tooltipDisplay, components, flag);
+}
 
 }

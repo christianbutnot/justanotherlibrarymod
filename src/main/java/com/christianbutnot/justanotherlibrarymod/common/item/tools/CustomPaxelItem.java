@@ -2,7 +2,6 @@ package com.christianbutnot.justanotherlibrarymod.common.item.tools;
 
 import java.util.Map;
 
-import com.christianbutnot.justanotherlibrarymod.util.CustomTags;
 import com.google.common.collect.ImmutableMap.Builder;
 import com.google.common.collect.Maps;
 
@@ -13,8 +12,7 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.DiggerItem;
-import net.minecraft.world.item.ToolMaterial;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
@@ -24,7 +22,7 @@ import net.minecraft.world.level.gameevent.GameEvent;
 
 public class CustomPaxelItem {
 
-	public static class PaxelItem extends DiggerItem {
+	public static class PaxelItem extends Item {
 
 		@SuppressWarnings({ "unchecked", "rawtypes" })
 		protected static final Map<Block, BlockState> FLATTENABLES = Maps
@@ -35,8 +33,8 @@ public class CustomPaxelItem {
 						.put(Blocks.MYCELIUM, Blocks.DIRT_PATH.defaultBlockState())
 						.put(Blocks.ROOTED_DIRT, Blocks.DIRT_PATH.defaultBlockState()).build());
 
-		public PaxelItem(ToolMaterial pTier, float pAttackDamageModifier, float pAttackSpeedModifier, Properties pProperties) {
-			super(pTier, CustomTags.PAXEL_MINEABLE, 2F, -3F, pProperties);
+		public PaxelItem(Properties properties) {
+			super(properties);
 		}
 
 		@Override

@@ -1,6 +1,6 @@
 package com.christianbutnot.justanotherlibrarymod.common.item;
 
-import java.util.List;
+import java.util.function.Consumer;
 
 import javax.annotation.Nullable;
 
@@ -9,6 +9,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.component.TooltipDisplay;
 
 public class ItemTypes {
 
@@ -18,15 +19,16 @@ public class ItemTypes {
 			super(p_i48487_1_);
 		}
 
+		@SuppressWarnings("deprecation")
 		@Override
-		public void appendHoverText(ItemStack stack, @Nullable TooltipContext level, List<Component> components,
-				TooltipFlag flag) {
+		public void appendHoverText(ItemStack stack, @Nullable TooltipContext level, TooltipDisplay tooltipDisplay,
+				Consumer<Component> components, TooltipFlag flag) {
 			{
-				components.add(Component.literal("Common Item").withStyle(ChatFormatting.GRAY)
+				components.accept(Component.literal("Common Item").withStyle(ChatFormatting.GRAY)
 						.withStyle(ChatFormatting.ITALIC));
 			}
 
-			super.appendHoverText(stack, level, components, flag);
+			super.appendHoverText(stack, level, tooltipDisplay, components, flag);
 		}
 	}
 
@@ -36,15 +38,16 @@ public class ItemTypes {
 			super(p_i48487_1_);
 		}
 
+		@SuppressWarnings("deprecation")
 		@Override
-		public void appendHoverText(ItemStack stack, @Nullable TooltipContext level, List<Component> components,
-				TooltipFlag flag) {
+		public void appendHoverText(ItemStack stack, @Nullable TooltipContext level, TooltipDisplay tooltipDisplay,
+				Consumer<Component> components, TooltipFlag flag) {
 			{
-				components.add(Component.literal("Utility Item").withStyle(ChatFormatting.RED)
+				components.accept(Component.literal("Utility Item").withStyle(ChatFormatting.RED)
 						.withStyle(ChatFormatting.ITALIC));
 			}
 
-			super.appendHoverText(stack, level, components, flag);
+			super.appendHoverText(stack, level, tooltipDisplay, components, flag);
 		}
 	}
 
@@ -54,17 +57,18 @@ public class ItemTypes {
 			super(p_i48487_1_);
 		}
 
+		@SuppressWarnings("deprecation")
 		@Override
-		public void appendHoverText(ItemStack stack, @Nullable TooltipContext level, List<Component> components,
-				TooltipFlag flag) {
+		public void appendHoverText(ItemStack stack, @Nullable TooltipContext level, TooltipDisplay tooltipDisplay,
+				Consumer<Component> components, TooltipFlag flag) {
 			{
-				components.add(Component.literal("Utility Item").withStyle(ChatFormatting.RED)
+				components.accept(Component.literal("Utility Item").withStyle(ChatFormatting.RED)
 						.withStyle(ChatFormatting.ITALIC));
-				components.add(Component.literal("Applicable to Diamond Armor/Tools").withStyle(ChatFormatting.GRAY)
+				components.accept(Component.literal("Applicable to Diamond Armor/Tools").withStyle(ChatFormatting.GRAY)
 						.withStyle(ChatFormatting.ITALIC));
 			}
 
-			super.appendHoverText(stack, level, components, flag);
+			super.appendHoverText(stack, level, tooltipDisplay, components, flag);
 		}
 	}
 
@@ -74,17 +78,18 @@ public class ItemTypes {
 			super(p_i48487_1_);
 		}
 
+		@SuppressWarnings("deprecation")
 		@Override
-		public void appendHoverText(ItemStack stack, @Nullable TooltipContext level, List<Component> components,
-				TooltipFlag flag) {
+		public void appendHoverText(ItemStack stack, @Nullable TooltipContext level, TooltipDisplay tooltipDisplay,
+				Consumer<Component> components, TooltipFlag flag) {
 			{
-				components.add(Component.literal("Utility Item").withStyle(ChatFormatting.RED)
+				components.accept(Component.literal("Utility Item").withStyle(ChatFormatting.RED)
 						.withStyle(ChatFormatting.ITALIC));
-				components.add(Component.literal("Applicable to Netherite Armor/Tools").withStyle(ChatFormatting.GRAY)
-						.withStyle(ChatFormatting.ITALIC));
+				components.accept(Component.literal("Applicable to Netherite Armor/Tools")
+						.withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
 			}
 
-			super.appendHoverText(stack, level, components, flag);
+			super.appendHoverText(stack, level, tooltipDisplay, components, flag);
 		}
 	}
 
@@ -94,17 +99,18 @@ public class ItemTypes {
 			super(p_i48487_1_);
 		}
 
+		@SuppressWarnings("deprecation")
 		@Override
-		public void appendHoverText(ItemStack stack, @Nullable TooltipContext level, List<Component> components,
-				TooltipFlag flag) {
+		public void appendHoverText(ItemStack stack, @Nullable TooltipContext level, TooltipDisplay tooltipDisplay,
+				Consumer<Component> components, TooltipFlag flag) {
 			{
-				components.add(Component.literal("Utility Item").withStyle(ChatFormatting.RED)
+				components.accept(Component.literal("Utility Item").withStyle(ChatFormatting.RED)
 						.withStyle(ChatFormatting.ITALIC));
-				components.add(Component.literal("Applicable to Withered Armor/Tools").withStyle(ChatFormatting.GRAY)
+				components.accept(Component.literal("Applicable to Withered Armor/Tools").withStyle(ChatFormatting.GRAY)
 						.withStyle(ChatFormatting.ITALIC));
 			}
 
-			super.appendHoverText(stack, level, components, flag);
+			super.appendHoverText(stack, level, tooltipDisplay, components, flag);
 		}
 	}
 
@@ -114,17 +120,18 @@ public class ItemTypes {
 			super(p_i48487_1_);
 		}
 
+		@SuppressWarnings("deprecation")
 		@Override
-		public void appendHoverText(ItemStack stack, @Nullable TooltipContext level, List<Component> components,
-				TooltipFlag flag) {
+		public void appendHoverText(ItemStack stack, @Nullable TooltipContext level, TooltipDisplay tooltipDisplay,
+				Consumer<Component> components, TooltipFlag flag) {
 			{
-				components.add(Component.literal("Utility Item").withStyle(ChatFormatting.RED)
+				components.accept(Component.literal("Utility Item").withStyle(ChatFormatting.RED)
 						.withStyle(ChatFormatting.ITALIC));
-				components.add(Component.literal("Applicable to Dragonborn Armor/Tools").withStyle(ChatFormatting.GRAY)
-						.withStyle(ChatFormatting.ITALIC));
+				components.accept(Component.literal("Applicable to Dragonborn Armor/Tools")
+						.withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
 			}
 
-			super.appendHoverText(stack, level, components, flag);
+			super.appendHoverText(stack, level, tooltipDisplay, components, flag);
 		}
 	}
 
@@ -134,15 +141,16 @@ public class ItemTypes {
 			super(p_i48487_1_);
 		}
 
+		@SuppressWarnings("deprecation")
 		@Override
-		public void appendHoverText(ItemStack stack, @Nullable TooltipContext level, List<Component> components,
-				TooltipFlag flag) {
+		public void appendHoverText(ItemStack stack, @Nullable TooltipContext level, TooltipDisplay tooltipDisplay,
+				Consumer<Component> components, TooltipFlag flag) {
 			{
-				components.add(Component.literal("Treasure Item").withStyle(ChatFormatting.GOLD)
+				components.accept(Component.literal("Treasure Item").withStyle(ChatFormatting.GOLD)
 						.withStyle(ChatFormatting.ITALIC));
 			}
 
-			super.appendHoverText(stack, level, components, flag);
+			super.appendHoverText(stack, level, tooltipDisplay, components, flag);
 		}
 	}
 
@@ -152,15 +160,16 @@ public class ItemTypes {
 			super(p_i48487_1_);
 		}
 
+		@SuppressWarnings("deprecation")
 		@Override
-		public void appendHoverText(ItemStack stack, @Nullable TooltipContext level, List<Component> components,
-				TooltipFlag flag) {
+		public void appendHoverText(ItemStack stack, @Nullable TooltipContext level, TooltipDisplay tooltipDisplay,
+				Consumer<Component> components, TooltipFlag flag) {
 			{
-				components.add(Component.literal("Resource Item").withStyle(ChatFormatting.LIGHT_PURPLE)
+				components.accept(Component.literal("Resource Item").withStyle(ChatFormatting.LIGHT_PURPLE)
 						.withStyle(ChatFormatting.ITALIC));
 			}
 
-			super.appendHoverText(stack, level, components, flag);
+			super.appendHoverText(stack, level, tooltipDisplay, components, flag);
 		}
 	}
 
@@ -170,15 +179,16 @@ public class ItemTypes {
 			super(p_i48487_1_);
 		}
 
+		@SuppressWarnings("deprecation")
 		@Override
-		public void appendHoverText(ItemStack stack, @Nullable TooltipContext level, List<Component> components,
-				TooltipFlag flag) {
+		public void appendHoverText(ItemStack stack, @Nullable TooltipContext level, TooltipDisplay tooltipDisplay,
+				Consumer<Component> components, TooltipFlag flag) {
 			{
-				components.add(
+				components.accept(
 						Component.literal("Rare Item").withStyle(ChatFormatting.AQUA).withStyle(ChatFormatting.ITALIC));
 			}
 
-			super.appendHoverText(stack, level, components, flag);
+			super.appendHoverText(stack, level, tooltipDisplay, components, flag);
 		}
 
 	}
@@ -189,15 +199,16 @@ public class ItemTypes {
 			super(p_i48487_1_);
 		}
 
+		@SuppressWarnings("deprecation")
 		@Override
-		public void appendHoverText(ItemStack stack, @Nullable TooltipContext level, List<Component> components,
-				TooltipFlag flag) {
+		public void appendHoverText(ItemStack stack, @Nullable TooltipContext level, TooltipDisplay tooltipDisplay,
+				Consumer<Component> components, TooltipFlag flag) {
 			{
-				components.add(Component.literal("Mythic Item").withStyle(ChatFormatting.RED)
+				components.accept(Component.literal("Mythic Item").withStyle(ChatFormatting.RED)
 						.withStyle(ChatFormatting.ITALIC));
 			}
 
-			super.appendHoverText(stack, level, components, flag);
+			super.appendHoverText(stack, level, tooltipDisplay, components, flag);
 		}
 
 	}
@@ -208,15 +219,16 @@ public class ItemTypes {
 			super(p_i48487_1_);
 		}
 
+		@SuppressWarnings("deprecation")
 		@Override
-		public void appendHoverText(ItemStack stack, @Nullable TooltipContext level, List<Component> components,
-				TooltipFlag flag) {
+		public void appendHoverText(ItemStack stack, @Nullable TooltipContext level, TooltipDisplay tooltipDisplay,
+				Consumer<Component> components, TooltipFlag flag) {
 			{
-				components.add(Component.literal("Mob Item").withStyle(ChatFormatting.DARK_RED)
+				components.accept(Component.literal("Mob Item").withStyle(ChatFormatting.DARK_RED)
 						.withStyle(ChatFormatting.ITALIC));
 			}
 
-			super.appendHoverText(stack, level, components, flag);
+			super.appendHoverText(stack, level, tooltipDisplay, components, flag);
 		}
 	}
 
@@ -226,15 +238,16 @@ public class ItemTypes {
 			super(p_i48487_1_);
 		}
 
+		@SuppressWarnings("deprecation")
 		@Override
-		public void appendHoverText(ItemStack stack, @Nullable TooltipContext level, List<Component> components,
-				TooltipFlag flag) {
+		public void appendHoverText(ItemStack stack, @Nullable TooltipContext level, TooltipDisplay tooltipDisplay,
+				Consumer<Component> components, TooltipFlag flag) {
 			{
-				components.add(Component.literal("Legendary Item").withStyle(ChatFormatting.GOLD)
+				components.accept(Component.literal("Legendary Item").withStyle(ChatFormatting.GOLD)
 						.withStyle(ChatFormatting.ITALIC));
 			}
 
-			super.appendHoverText(stack, level, components, flag);
+			super.appendHoverText(stack, level, tooltipDisplay, components, flag);
 		}
 
 	}
@@ -245,15 +258,16 @@ public class ItemTypes {
 			super(p_i48487_1_);
 		}
 
+		@SuppressWarnings("deprecation")
 		@Override
-		public void appendHoverText(ItemStack stack, @Nullable TooltipContext level, List<Component> components,
-				TooltipFlag flag) {
+		public void appendHoverText(ItemStack stack, @Nullable TooltipContext level, TooltipDisplay tooltipDisplay,
+				Consumer<Component> components, TooltipFlag flag) {
 			{
-				components.add(Component.literal("Epic Item").withStyle(ChatFormatting.DARK_PURPLE)
+				components.accept(Component.literal("Epic Item").withStyle(ChatFormatting.DARK_PURPLE)
 						.withStyle(ChatFormatting.ITALIC));
 			}
 
-			super.appendHoverText(stack, level, components, flag);
+			super.appendHoverText(stack, level, tooltipDisplay, components, flag);
 		}
 
 	}
@@ -264,15 +278,16 @@ public class ItemTypes {
 			super(p_i48487_1_);
 		}
 
+		@SuppressWarnings("deprecation")
 		@Override
-		public void appendHoverText(ItemStack stack, @Nullable TooltipContext level, List<Component> components,
-				TooltipFlag flag) {
+		public void appendHoverText(ItemStack stack, @Nullable TooltipContext level, TooltipDisplay tooltipDisplay,
+				Consumer<Component> components, TooltipFlag flag) {
 			{
-				components.add(Component.literal("Edible Item").withStyle(ChatFormatting.DARK_AQUA)
+				components.accept(Component.literal("Edible Item").withStyle(ChatFormatting.DARK_AQUA)
 						.withStyle(ChatFormatting.ITALIC));
 			}
 
-			super.appendHoverText(stack, level, components, flag);
+			super.appendHoverText(stack, level, tooltipDisplay, components, flag);
 		}
 	}
 
@@ -282,31 +297,35 @@ public class ItemTypes {
 			super(p_i48487_1_);
 		}
 
+		@SuppressWarnings("deprecation")
 		@Override
-	    public void appendHoverText(ItemStack stack, @Nullable TooltipContext level, List<Component> components, TooltipFlag flag) {
+		public void appendHoverText(ItemStack stack, @Nullable TooltipContext level, TooltipDisplay tooltipDisplay,
+				Consumer<Component> components, TooltipFlag flag) {
 			{
-	            components.add(Component.literal("Cosmetic Item").withStyle(ChatFormatting.GREEN).withStyle(ChatFormatting.ITALIC));
-	        } 
+				components.accept(Component.literal("Cosmetic Item").withStyle(ChatFormatting.GREEN)
+						.withStyle(ChatFormatting.ITALIC));
+			}
 
-	        super.appendHoverText(stack, level, components, flag);
-	    }
-		
+			super.appendHoverText(stack, level, tooltipDisplay, components, flag);
+		}
+
 		public static class CurrencyItem extends Item {
 
 			public CurrencyItem(Properties p_i48487_1_) {
 				super(p_i48487_1_);
 			}
 
+			@SuppressWarnings("deprecation")
 			@Override
-			public void appendHoverText(ItemStack stack, @Nullable TooltipContext level, List<Component> components,
-					TooltipFlag flag) {
+			public void appendHoverText(ItemStack stack, @Nullable TooltipContext level, TooltipDisplay tooltipDisplay,
+					Consumer<Component> components, TooltipFlag flag) {
 				{
-					components.add(Component.literal("Currency Item").withStyle(ChatFormatting.DARK_AQUA)
+					components.accept(Component.literal("Currency Item").withStyle(ChatFormatting.DARK_AQUA)
 							.withStyle(ChatFormatting.ITALIC));
 				}
 
-				super.appendHoverText(stack, level, components, flag);
+				super.appendHoverText(stack, level, tooltipDisplay, components, flag);
 			}
+		}
 	}
-}
 }

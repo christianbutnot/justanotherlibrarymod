@@ -1,12 +1,13 @@
 package com.christianbutnot.justanotherlibrarymod.common.item.weapons;
 
-import net.minecraft.world.item.SwordItem;
-import net.minecraft.world.item.ToolMaterial;
+import net.minecraft.world.item.Item;
 
-public class CustomGlaiveItem extends SwordItem {
+public class CustomGlaiveItem extends Item {
 
-	public CustomGlaiveItem(ToolMaterial tier, int i, int j, Properties properties) {
-		super(tier, j, j, properties);
+	public CustomGlaiveItem(Properties properties) {
+		super(properties);
 	}
+	
+	
 
 }

@@ -6,17 +6,15 @@ import java.util.List;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.tags.BlockTags;
-import net.minecraft.world.item.DiggerItem;
-import net.minecraft.world.item.ToolMaterial;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.HitResult;
 
-public class CustomExcavatorItem extends DiggerItem {
+public class CustomExcavatorItem extends Item {
 	
-	public CustomExcavatorItem(ToolMaterial pTier, float pAttackDamageModifier, float pAttackSpeedModifier, Properties pProperties) {
-		super(pTier, BlockTags.MINEABLE_WITH_SHOVEL,  2F, -3F, pProperties);
+	public CustomExcavatorItem(Properties properties) {
+		super(properties);
 	}
 
 	public static List<BlockPos> getBlocksToBeDestroyed(int range, BlockPos initalBlockPos, ServerPlayer player) {

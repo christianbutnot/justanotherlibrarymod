@@ -1,30 +1,29 @@
 package com.christianbutnot.justanotherlibrarymod.common.item.tools;
 
-import java.util.List;
+import java.util.function.Consumer;
 
 import org.jetbrains.annotations.Nullable;
 
-import com.christianbutnot.justanotherlibrarymod.util.CustomTags;
-
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
-import net.minecraft.world.item.DiggerItem;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.ToolMaterial;
 import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.component.TooltipDisplay;
 
-public class CustomChiselItem extends DiggerItem {
-	public CustomChiselItem(ToolMaterial pTier, float pAttackDamageModifier, float pAttackSpeedModifier,
-			Properties pProperties) {
-		super(pTier, CustomTags.PAXEL_MINEABLE, 0.0F, 0.0F, pProperties);
+public class CustomChiselItem extends Item {
+
+	public CustomChiselItem(Properties properties) {
+		super(properties);
 	}
 
-	public void appendHoverText(ItemStack stack, @Nullable TooltipContext level, List<Component> components,
-			TooltipFlag flag) {
-		components.add(Component.literal("Blocks broken may break down into other materials...")
+	@SuppressWarnings("deprecation")
+	public void appendHoverText(ItemStack stack, @Nullable TooltipContext level, TooltipDisplay tooltipDisplay,
+			Consumer<Component> components, TooltipFlag flag) {
+		components.accept(Component.literal("Blocks broken may break down into other materials...")
 				.withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
-		components
-				.add(Component.literal("Utility Item").withStyle(ChatFormatting.RED).withStyle(ChatFormatting.ITALIC));
-		super.appendHoverText(stack, level, components, flag);
+		components.accept(
+				Component.literal("Utility Item").withStyle(ChatFormatting.RED).withStyle(ChatFormatting.ITALIC));
+		super.appendHoverText(stack, level, tooltipDisplay, components, flag);
 	}
 }
