@@ -4,17 +4,23 @@ import java.util.function.Consumer;
 
 import org.jetbrains.annotations.Nullable;
 
+import com.christianbutnot.justanotherlibrarymod.common.item.defaults.DiggerItem;
+import com.christianbutnot.justanotherlibrarymod.util.CustomTags;
+
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Item.TooltipContext;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.ToolMaterial;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.component.TooltipDisplay;
 
-public class CustomChiselItem extends Item {
+public class CustomChiselItem extends DiggerItem {
 
-	public CustomChiselItem(Properties properties) {
-		super(properties);
+	public CustomChiselItem(ToolMaterial material, float attackDamage, float attackSpeed, Item.Properties properties) {
+        super(material, CustomTags.MINEABLE_BY_MULTI_TOOL, attackDamage, attackSpeed, properties);
 	}
 
 	@SuppressWarnings("deprecation")

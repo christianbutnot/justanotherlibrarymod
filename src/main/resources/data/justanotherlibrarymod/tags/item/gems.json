@@ -1,9 +1,5 @@
 {
   "replace": false,
   "values": [
-    "progressionutils:maralite_gem",
-    "progressionutils:taninite_gem",
-    "progressionutils:strossnium_gem",
-    "progressionutils:argoliem_gem"
   ]
 }

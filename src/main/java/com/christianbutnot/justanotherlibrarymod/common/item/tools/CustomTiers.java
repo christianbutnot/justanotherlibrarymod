@@ -68,9 +68,9 @@ public class CustomTiers {
 	      BROKONIUM = new ToolMaterial(CustomTags.NEEDS_BROKONIUM_TOOL, 2031, 6.0F, 3.0F, 10, CustomTags.BROKONIUM);
 	      CHRONIUM = new ToolMaterial(BlockTags.INCORRECT_FOR_IRON_TOOL, 600, 6.0F, 2.0F, 8, CustomTags.CHRONIUM);
 	      ROSIUM = new ToolMaterial(BlockTags.INCORRECT_FOR_IRON_TOOL, 1561, 7.0F, 3.0F, 29, CustomTags.ROSIUM);
-	      LUCIUM = new ToolMaterial(BlockTags.INCORRECT_FOR_IRON_TOOL, 1561, 8.0F, 3.0F, 16, CustomTags.LUCIUM);
-	      MOCYLITE = new ToolMaterial(BlockTags.INCORRECT_FOR_IRON_TOOL, 2031, 6.0F, 3.0F, 10, CustomTags.MOCYLITE);
-	      ENDERITE = new ToolMaterial(BlockTags.INCORRECT_FOR_IRON_TOOL, 2571, 10.0F, 4.0F, 12, CustomTags.ENDERITE);
+	      LUCIUM = new ToolMaterial(BlockTags.INCORRECT_FOR_DIAMOND_TOOL, 1561, 8.0F, 3.0F, 16, CustomTags.LUCIUM);
+	      MOCYLITE = new ToolMaterial(BlockTags.INCORRECT_FOR_DIAMOND_TOOL, 2031, 6.0F, 3.0F, 10, CustomTags.MOCYLITE);
+	      ENDERITE = new ToolMaterial(BlockTags.INCORRECT_FOR_DIAMOND_TOOL, 2571, 10.0F, 4.0F, 12, CustomTags.ENDERITE);
 	      ALUMINUM = new ToolMaterial(CustomTags.NEEDS_AQUATIC_TOOL, 199, 6.0F, 2.0F, 8, CustomTags.ALUMINUM);
 	      TIN = new ToolMaterial(CustomTags.NEEDS_WITHERED_TOOL, 221, 6.0F, 2.0F, 16, CustomTags.TIN);
 	      SILVER = new ToolMaterial(CustomTags.NEEDS_DRAGONBORN_TOOL, 245, 6.0F, 2.0F, 25, CustomTags.SILVER);

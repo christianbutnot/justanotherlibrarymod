@@ -13,7 +13,7 @@ public class CustomTags {
 	   public static final TagKey<Block> NEEDS_WITHERED_TOOL = modBlockTag("needs_withered_tool");
 	   public static final TagKey<Block> NEEDS_AQUATIC_TOOL = modBlockTag("needs_aquatic_tool");
 	   public static final TagKey<Block> NEEDS_DRAGONBORN_TOOL = modBlockTag("needs_dragonborn_tool");
-	   public static final TagKey<Block> MINEABLE_BY_MULTI_TOOL = modBlockTag("mineable/multi_tool");
+	   public static final TagKey<Block> MINEABLE_BY_MULTI_TOOL = modBlockTag("mineable/paxel");
 	   public static final TagKey<Item> AMETHYST = modItemTag("amethyst");
 	   public static final TagKey<Item> REDSTONE = modItemTag("redstone");
 	   public static final TagKey<Item> QUARTZ = modItemTag("quartz");
